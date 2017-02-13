@@ -50,7 +50,6 @@ public class DataSourceAccessImpl implements DataSourceAccess {
         private static final DataSourceAccessImpl INSTANCE = new DataSourceAccessImpl();
     }
 
-
     private DataSource doDataSourceThrowable() throws PropertyVetoException {
         final ComboPooledDataSource pool = new ComboPooledDataSource();
         pool.setUser(USERNAME);
