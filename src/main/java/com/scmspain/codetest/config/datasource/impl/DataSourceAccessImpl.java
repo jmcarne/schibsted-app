@@ -12,9 +12,10 @@ import java.beans.PropertyVetoException;
  * Created by josep.carne on 12/02/2017.
  */
 public class DataSourceAccessImpl implements DataSourceAccess {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceAccessImpl.class);
+    //private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceAccessImpl.class);
     private static final String DRIVER_CLASS = "org.h2.Driver";
-    private static final String JDBC_URL = "jdbc:h2:mem:PRUEBA;INIT=create schema if not exists PRUEBA\\;SET SCHEMA PRUEBA;MODE=DB2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE";
+    //private static final String JDBC_URL = "jdbc:h2:mem:PRUEBA;INIT=create schema if not exists PRUEBA\\;SET SCHEMA PRUEBA;MODE=DB2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE";
+    private static final String JDBC_URL = "jdbc:h2:˜mem/test";
     private static final String USERNAME = "sa";
     private static final String PASSWORD = "";
 
@@ -38,7 +39,7 @@ public class DataSourceAccessImpl implements DataSourceAccess {
         try {
             dataSource = doDataSourceThrowable();
         } catch (PropertyVetoException exception) {
-            LOGGER.error("DataSource init error", exception);
+            //LOGGER.error("DataSource init error", exception);
 
             throw new IllegalStateException("DataSource init error", exception);
         }
