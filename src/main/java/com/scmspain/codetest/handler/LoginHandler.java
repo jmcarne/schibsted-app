@@ -18,7 +18,7 @@ public class LoginHandler implements HttpHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginHandler.class);
 
-    //private final LoginController loginController = new LoginController();
+    private final LoginController loginController = new LoginController();
     private final HttpHandler sessionHandler;
 
     public LoginHandler(HttpHandler sessionHandler) {
