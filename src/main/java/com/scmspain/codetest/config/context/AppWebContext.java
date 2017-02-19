@@ -19,6 +19,7 @@ public class AppWebContext implements ContextApp {
         this.dataSource = DataSourceAccessImpl.getInstance().getDataSource();
         //this.liquibaseContext = new LiquibaseContext(dataSource);
         //this.liquibaseContext.init();
+        //this.dataSource.init();
         this.sessionHandler = new SessionHandler();
         //this.apiHandler = new ApiHandler();
         //this.webHttpHandler = new PagesHandler(sessionHandler);
