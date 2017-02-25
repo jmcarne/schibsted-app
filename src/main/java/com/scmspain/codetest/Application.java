@@ -13,7 +13,6 @@ import java.util.logging.Logger;
  * Created by josep.carne on 11/02/2017.
  */
 public class Application {
-    private static final Logger log = Logger.getLogger(Application.class.getName());
     private static final int port = 8080;
 
     public static void main(String[] args) throws IOException {

@@ -41,8 +41,8 @@ public class LoginHandler implements HttpHandler {
     }
 
     protected void handleThrowable(HttpExchange httpExchange) throws IOException  {
-        //sessionHandler.handle(httpExchange);
+        sessionHandler.handle(httpExchange);
 
-        //loginController.handle(httpExchange);
+        loginController.handle(httpExchange);
     }
 }
