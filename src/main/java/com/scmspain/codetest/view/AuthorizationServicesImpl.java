@@ -41,7 +41,7 @@ public class AuthorizationServicesImpl {
         String userNameParam = "";
         try {
             //final Map<String, String> variables = pathMatcher.extractUriTemplateVariables(API_URL_PATTERN, uri);
-            userNameParam = variables.get(USER_NAME_PARAM);
+            //userNameParam = variables.get(USER_NAME_PARAM);
         } catch (IllegalStateException exception) {
 
             LOGGER.warn("Error exception: ", exception);
