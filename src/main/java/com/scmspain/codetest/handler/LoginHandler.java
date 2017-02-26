@@ -14,20 +14,21 @@ import java.io.IOException;
  * Created by josep.carne on 11/02/2017.
  */
 public class LoginHandler implements HttpHandler {
-    public static final String CONTEXT = "/app";
+    public static final String CONTEXT = "/app/login/";
+    public static final String LOGIN_PAGE = "/app/login/login.html?serviceName=http://localhost:8080";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginHandler.class);
+
 
     private final LoginController loginController = new LoginController();
     private final HttpHandler sessionHandler;
 
     public LoginHandler(HttpHandler sessionHandler) {
-
         this.sessionHandler = sessionHandler;
     }
 
     @Override
-    public void handle(HttpExchange httpExchange) throws IOException {
+    public void handle(HttpExchange httpExchange) throws IOException  {
         try {
             this.handleThrowable(httpExchange);
         } catch (Exception exception) {
