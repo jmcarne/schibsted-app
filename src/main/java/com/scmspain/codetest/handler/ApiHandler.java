@@ -1,6 +1,5 @@
 package com.scmspain.codetest.handler;
 
-import com.scmspain.codetest.controller.ApiController;
 import com.scmspain.codetest.controller.Controller;
 import com.sun.net.httpserver.HttpExchange;
 import org.slf4j.Logger;
@@ -16,7 +15,7 @@ public class ApiHandler implements Controller {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ApiHandler.class);
 
-    private final ApiController apiController = new ApiController();
+    //private final ApiController apiController = new ApiController();
     //private final AuthorizationServicesImpl authorizationService = new AuthorizationServicesImpl();
 
     @Override

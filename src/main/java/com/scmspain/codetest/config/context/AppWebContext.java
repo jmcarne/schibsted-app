@@ -3,6 +3,7 @@ package com.scmspain.codetest.config.context;
 import com.scmspain.codetest.config.datasource.impl.DataSourceAccessImpl;
 import com.scmspain.codetest.handler.ApiHandler;
 import com.scmspain.codetest.handler.LoginHandler;
+import com.scmspain.codetest.handler.PagesHandler;
 import com.scmspain.codetest.handler.SessionHandler;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -16,6 +17,7 @@ import java.sql.SQLException;
 public class AppWebContext implements ContextApp {
     private final DataSource dataSource;
     private final HttpHandler sessionHandler;
+    private final HttpHandler webHttpHandler;
     private final HttpHandler loginHandler;
     private final HttpHandler apiHandler;
 
@@ -24,6 +26,7 @@ public class AppWebContext implements ContextApp {
         this.init();
         this.sessionHandler = new SessionHandler();
         this.apiHandler = new ApiHandler();
+        this.webHttpHandler = new PagesHandler(sessionHandler);
         this.loginHandler = new LoginHandler(sessionHandler);
     }
 
@@ -37,6 +40,11 @@ public class AppWebContext implements ContextApp {
     }
 
     @Override
+    public HttpHandler getWebHandler() {
+        return this.webHttpHandler;
+    }
+
+    @Override
     public HttpHandler getLoginHandler() {
         return this.loginHandler;
     }
@@ -44,6 +52,11 @@ public class AppWebContext implements ContextApp {
     @Override
     public HttpHandler getSessionHandler() {
         return this.sessionHandler;
+    }
+
+    @Override
+    public HttpHandler getApiHandler() {
+        return this.apiHandler;
     }
 
     private static class AppWebContextHolder {

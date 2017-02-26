@@ -9,6 +9,8 @@ import javax.sql.DataSource;
  */
 public interface ContextApp {
     DataSource getDataSource();
+    HttpHandler getWebHandler();
     HttpHandler getLoginHandler();
     HttpHandler getSessionHandler();
+    HttpHandler getApiHandler();
 }
